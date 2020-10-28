@@ -1,0 +1,71 @@
+body {
+    margin: 0;
+    padding: 0;
+  }
+
+  #map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+  }
+
+  /* Popup styling */
+
+  .mapboxgl-popup-close-button {
+    display: none;
+  }
+
+  .mapboxgl-popup-content {
+    padding: 0;
+    width: min-content;
+    min-width: 280px;
+    border-radius: 0;
+  }
+
+  .marker {
+    background-image: url(https://yt3.ggpht.com/a/AATXAJzXtLmeyNLYnGlwAIeTmYIL4DbzVGMcDJwLi25u=s88-c-k-c0x00ffffff-no-rj);
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: -3px 5px #06AC60;
+  }
+
+  .popup #title {
+    font-size: 20px;
+    padding: 12px;
+    background: #F8E91C;
+    font-family: 'Arial Black', Gadget, sans-serif;
+  }
+
+  .popup #join {
+    background: #4CAE4A;
+    font-size: 18px;
+    padding: 8px 20px;
+    margin: 15px 0;
+    color: white;
+    text-decoration: none;
+    display: block;
+    font-family: 'Arial Black', Gadget, sans-serif;
+  }
+  .popup #join:hover {
+    background: green;
+  }
+
+  .popup .body {
+    text-align: center;
+    margin: 16px;
+  }
+
+  .popup #contact {
+    display: block;
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    text-align: left;
+  }
+  .popup #contact:hover {
+    color: green;
+  }

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8' />
+  <title></title>
+  <!-- <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' /> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+  <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.min.js"></script>
+  <script src='https://npmcdn.com/@turf/turf/turf.min.js'></script>
+  
+  <link
+  rel="stylesheet"
+  href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.css"
+  type="text/css"
+  />
+  <!-- <script src="https://www.geosheets.com/map/s:1bpKqVJK/Green-New-Deal-UK-local-groups/export/geojson?callback=parseResponse"></script> -->
+  <script src="https://api.mapbox.com/mapbox-gl-js/v1.9.1/mapbox-gl.js"></script>
+  <link href="https://api.mapbox.com/mapbox-gl-js/v1.9.1/mapbox-gl.css" rel="stylesheet" />
+  <script src='https://npmcdn.com/csv2geojson@latest/csv2geojson.js'></script>
+  
+  <link type="text/css" href="main.css" rel="stylesheet" />
+  <script type="text/javascript" src="mapgnd.js"></script>
+  <!-- <script type="text/javascript" src="locations.js"></script> -->
+</head>
+
+<body>
+
+  <div id='map'/>
+
+  <div id="location-popup-template" style="display: none  ;">
+    <div class="popup">
+      <div id="title">%%%LOCATION%%%</div> 
+      <div class="body">
+        <!-- <span>Contact: </span> -->
+        <a id="contact" href="mailto:%%%CONTACT%%%">%%%CONTACT%%%</a>
+        <a id="join" href="%%%JOIN%%%">Sign Up</a>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
