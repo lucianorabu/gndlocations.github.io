@@ -1,12 +1,12 @@
 const initMap = () => {
   const accessToken = "pk.eyJ1IjoibHVjaWFub3JhYnUiLCJhIjoiY2tncGdudTFkMGEwZTJxdGQ1bjc2cGQzMyJ9.clTzJRrkDknTC8j4jLHcaA";
-    mapboxgl.accessToken = accessToken; //Mapbox token
-
-  const map = new mapboxgl.Map({
-    container: "map", // container id
-    style: "mapbox://styles/lucianorabu/ckgph9z1z3ud919qle3qpxv2h", //stylesheet location
-    center: [-3.2765753, 54.7023545], // starting position
-    zoom: 1, // starting zoom
+    mapboxgl.accessToken = accessToken;
+    
+    const map = new mapboxgl.Map({
+    container: "map",
+    style: "mapbox://styles/lucianorabu/ckgph9z1z3ud919qle3qpxv2h", /*stylesheet location*/
+    center: [-3.2765753, 54.7023545], /*starting position*/
+    zoom: 1, /*starting zoom*/
   });
 
   map.addControl(
@@ -18,7 +18,7 @@ const initMap = () => {
   
   map.addControl(new mapboxgl.FullscreenControl(), 'bottom-left');
 
-  // Add geolocate control to the map.
+  /*Add geolocate control to the map*/
    map.addControl(
       new mapboxgl.GeolocateControl({
          positionOptions: {
@@ -28,11 +28,11 @@ const initMap = () => {
       }), 'bottom-left'
    );
 
-   // Add zoom and rotation controls to the map.
+   /*add zoom and rotation controls to the map.*/
    map.addControl(new mapboxgl.NavigationControl(), 'bottom-left');
 
   return map;
-}
+};
 
 const loadmap = (data, map) => {
   
@@ -54,18 +54,16 @@ const loadmap = (data, map) => {
     });
 
     data.features.forEach((marker) => {
-      // create a HTML element for each feature
+      /*create a HTML element for each feature*/
       var el = document.createElement('div');
       el.className = 'marker';
-    
-      // make a marker for each feature and add to the map
       new mapboxgl.Marker(el)
         .setLngLat(marker.geometry.coordinates)
         .addTo(map);
     });
 
-    // When a click event occurs on a feature in the csvData layer, open a popup at the
-    // location of the feature, with description HTML from its properties.
+    /* When a click event occurs on a feature in the csvData layer, open a popup at the
+    location of the feature, with description HTML from its properties.*/
     map.on("click", "points", (e) => {
       map.flyTo({
          center: e.features[0].geometry.coordinates
@@ -73,7 +71,7 @@ const loadmap = (data, map) => {
       var coordinates = e.features[0].geometry.coordinates.slice();
       var htmlPopup = getPopup(e.features[0].properties) ;
       setTimeout(function(){
-         //add Popup to map
+         /*add Popup to map*/
          new mapboxgl.Popup()
            .setLngLat(coordinates)
            .setHTML(htmlPopup)
@@ -98,13 +96,13 @@ const getPopup = (properties) => {
    }
   });
   return htmlPopup;
-}
+};
 
 (($) => {
   $(document).ready(function () {
-   // /wp-content/uploads/2020/11/locations.json
-   // /locations.json
-   $.getJSON("/locations.json", function(result){   
+   /*/wp-content/uploads/2020/11/locations.json/*
+   /*locations.json*/
+   $.getJSON('/locations.json', function(result){   
       loadmap(result, initMap());
    });
   });
