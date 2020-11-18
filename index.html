@@ -19,18 +19,18 @@
   <script src='https://npmcdn.com/csv2geojson@latest/csv2geojson.js'></script>
   
   <link type='text/css' href='main.css' rel='stylesheet' id='mapStyle'/>
-  <script type='text/javascript' src='mapgnd.js' id='mapScript'/>
+  <script type='text/javascript' src='mapgnd.js' id='mapScript'></script>
 </head>
 
 <body>
 
-  <div id='map-container' style="max-width: 546px; max-height: 462px;">
+  <div id='map-container' style='max-width: 546px; max-height: 462px;'>
     <div id='map'/>
- </div>
+  </div>
 
   <div id="location-popup-template" style="display: none  ;">
     <div class="popup">
-      <div id="title">%%%LOCATION%%%</div>
+      <div id="title">%%%NAME%%%</div>
       <div class="body">
         <!-- <span>Contact: </span> -->
         <a id="contact" href="mailto:%%%CONTACT%%%">%%%CONTACT%%%</a>

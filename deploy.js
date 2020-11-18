@@ -20,7 +20,7 @@ function generateSingleFileMap(html) {
       css = "<style type='text/css' rel='stylesheet'>"+css+"</style>";
 
       html = html.replace("<link type='text/css' href='main.css' rel='stylesheet' id='mapStyle'/>",css);
-      html = html.replace("<script type='text/javascript' src='mapgnd.js' id='mapScript'/>",js);
+      html = html.replace("<script type='text/javascript' src='mapgnd.js' id='mapScript'></script>",js);
       html = html.replace("'/locations.json'","'/wp-content/uploads/2020/11/locations.json'");
       html = html.replace(/(\r\n|\n|\r)/gm, ' ');
       html = html.replace(/\s\s+/g, ' ');
@@ -31,7 +31,6 @@ function generateSingleFileMap(html) {
       });
 
       //send map to wordpress.
-
     });
   });
 
